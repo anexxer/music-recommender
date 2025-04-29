@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: music-recommender
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: "python app.py"
+    envVars:
+      - key: FLASK_ENV
+        value: production

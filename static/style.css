@@ -1,0 +1,74 @@
+/* Spotify-style gradient background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #191414, #1DB954);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login container box */
+.login-container {
+  background: rgba(25, 20, 20, 0.9); /* Slightly transparent black */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Heading style */
+.login-container h2 {
+  margin-bottom: 25px;
+  color: #1DB954; /* Spotify Green */
+}
+
+/* Input fields */
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  color: white;
+  font-size: 16px;
+}
+
+/* Button style */
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #1DB954;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Hover effect */
+.login-container button:hover {
+  background-color: #1ed760; /* lighter Spotify green */
+}
+
+/* Input focus */
+.login-container input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #1DB954;
+}
+
+
+
+
+
+
+
+

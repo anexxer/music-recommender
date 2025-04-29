@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Music Recommendation</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <div class="main-container">
+    <h2>🎵 Music Recommendation System</h2>
+
+    <div class="form-section">
+      <input type="text" id="artist" placeholder="Enter Artist">
+      <input type="text" id="genre" placeholder="Enter Genre">
+      <button onclick="searchSongs()">Search</button>
+    </div>
+
+    <h3>Recommended Songs:</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Song</th>
+            <th>Artist</th>
+            <th>Genre</th>
+            <th>Popularity</th>
+          </tr>
+        </thead>
+        <tbody id="results"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    function searchSongs() {
+      let artist = $("#artist").val();
+      let genre = $("#genre").val();
+
+      $.get("/search", { artist: artist, genre: genre }, function(data) {
+        let rows = "";
+        if (data.message) {
+          rows = `<tr><td colspan="4">${data.message}</td></tr>`;
+        } else {
+          data.forEach(song => {
+            rows += `<tr>
+                        <td>${song.name}</td>
+                        <td>${song.artist}</td>
+                        <td>${song.genre}</td>
+                        <td>${song.popularity || "N/A"}</td>
+                     </tr>`;
+          });
+        }
+        $("#results").html(rows);
+      });
+    }
+  </script>
+
+</body>
+</html>
+
