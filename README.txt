@@ -32,4 +32,4 @@ A Flask-based web app that recommends songs based on artist or genre using a Spo
 4. visit your local host to view the site
 
 eg:
-   Search for artist names like "Drake" or genre like "pop". (the database maynot have you local neighbourhood singer :) )
+   Search for artist names like "Drake" or genre like "pop". (the database maynot have your local neighbourhood singer :) )
